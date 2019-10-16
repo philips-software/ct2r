@@ -36,7 +36,6 @@ fn write_file(filename: &str, data: Vec<Output>) {
 fn parse(filename: &str) -> Result<()> {
     let file_content = read_file(&filename);
     let outputs: Vec<Output> = crate::vendors::xray::parse_file(&file_content);
-    //crate::vendors::xray::test();
     let output_filename = "output.json";
      write_file(&output_filename, outputs);
 
