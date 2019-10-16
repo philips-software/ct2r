@@ -1,11 +1,7 @@
 use serde_json::Result;
 
 pub fn example(filename: &str) -> Result<()> {
-    let xray = xray::parse(&filename);
-    match xray {
-        Ok(fc) => println!("{}", fc),
-        Err(error) => panic!("Problem! {}", error)
-    };
+    xray::parse(&filename).unwrap();
     Ok(())
 }
 
@@ -16,15 +12,6 @@ mod xray {
     use std::fs::File;
     use std::io::Read;
     use std::io::{BufWriter, Write};
-
-    #[derive(Deserialize, Serialize)]
-    struct Xray {
-        component_id: String,
-        component_name: String,
-        version: String,
-        pkg_type: String,
-        package_id: String,
-    }
 
     #[derive(Serialize)]
     struct Output {
@@ -47,9 +34,40 @@ mod xray {
         let mut ofile = BufWriter::new(ofile);
         ofile.write_all(output_string.as_bytes()).expect("unable to write");
     }
+    
+    pub fn parse(filename: &str) -> Result<()> {
+        let file_content = read_file(&filename);
+        let outputs: Vec<Output> = parse_file(&file_content);
 
-    pub fn parse(filename: &str) -> Result<(String)> {
-        let components: Vec<Xray> = serde_json::from_str(&read_file(&filename)).unwrap();
+        let output_filename = "output.json";
+        write_file(&output_filename, outputs);
+
+        Ok(())
+    }
+    
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+
+        #[test]
+        fn parse_test() {
+            assert!(parse("./tests/xray-license-export.json").is_ok());
+        }
+    }
+
+    // Xray specific
+    
+    #[derive(Deserialize, Serialize)]
+    struct Xray {
+        component_id: String,
+        component_name: String,
+        version: String,
+        pkg_type: String,
+        package_id: String,
+    }
+
+    fn parse_file(content: &str) -> Vec<(Output)> {
+        let components: Vec<Xray> = serde_json::from_str(&content).unwrap();
         let mut outputs: Vec<Output> = Vec::new();
         for component in components.iter() {
             println!("component_id: {}\ncomponent_name: {}\nversion: {}", component.component_id, component.component_name, component.version);
@@ -60,20 +78,7 @@ mod xray {
             outputs.push(output);
             println!("-==================================================-");
         }
-        let output_filename = "output.json";
-        write_file(&output_filename, outputs);
-
-        Ok(format!("project: {}\nbuildnumber: {}", "test", "test"))
+        outputs
     }
 
-    #[cfg(test)]
-    mod tests {
-        use super::*;
-
-        #[test]
-        fn parse_test() {
-            let results = parse("./tests/xray-license-export.json").unwrap();
-            assert_eq!(results, "project: js-react-app\nbuildnumber: 443222");
-        }
-    }
 }
