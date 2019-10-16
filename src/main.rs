@@ -1,6 +1,7 @@
 use std::env;
 
-mod parser;
+mod engine;
+mod vendors;
 
 fn main() {
 
@@ -12,6 +13,6 @@ fn main() {
 
     let input_path = ::std::env::args().nth(1).unwrap();
 
-    parser::parser::example(&input_path).unwrap();
+    engine::program::start(&input_path).unwrap();
 }
 
