@@ -1,0 +1,68 @@
+{
+  "properties" : {
+    "buildInfo.env.CI_SERVER_VERSION_MAJOR" : "12",
+    "buildInfo.env.YARN_VERSION" : "1.17.3",
+    "buildInfo.env.PATH" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  },
+  "version" : "1.0.1",
+  "name" : "js-react-app",
+  "number" : "443222",
+  "buildAgent" : {
+    "name" : "GENERIC",
+    "version" : "1.28.0"
+  },
+  "agent" : {
+    "name" : "jfrog-cli-go",
+    "version" : "1.28.0"
+  },
+  "started" : "2019-09-11T16:39:20.796+0000",
+  "durationMillis" : 0,
+  "artifactoryPrincipal" : "admin",
+  "modules" : [ {
+    "properties" : { },
+    "id" : "js-react-app:0.1.1",
+    "artifacts" : [ {
+      "sha1" : "9ef8be1bee74ab1ef651035807dbbceca6b49036",
+      "sha256" : "12f522faa2f59a94c18a22e7031ba4efbe8cf4e110a4788574a2e08c8495250f",
+      "md5" : "debda349c12104532fca06f95a88e95f",
+      "name" : "js-react-app-0.1.1.tgz"
+    } ],
+    "dependencies" : [ {
+      "sha1" : "43f6c21151b4ef2bf57187db0d73de229e3e7ec3",
+      "sha256" : "783d74d006231c224dce24c627122bb7fb0f04f9074c31b302a5b4246aa68707",
+      "md5" : "c241b91ac77f61d63c5c3df372d0c795",
+      "id" : "coa-2.0.2.tgz",
+      "scopes" : [ "production" ]
+    }, {
+      "sha1" : "a5f63d91f0bbc0c3e479ef4c5de027335ec6d630",
+      "sha256" : "0af8cd6827bc93e5224b050132370382cfc3bc74f485736fe2aa9fb3ac3d028c",
+      "md5" : "53062023252686e850af7c17a28961e6",
+      "id" : "istanbul-lib-instrument-3.3.0.tgz",
+      "scopes" : [ "production" ]
+    }, {
+      "sha1" : "54e9abf7dfa2f26cd9b1636c588c1afc05de5d58",
+      "sha256" : "307357d7cd0ad97a2401cee3fb548f31b421fa35c00a894b6c719852a6d95199",
+      "md5" : "1945cb2a7b23554d4aac44c47209e9d5",
+      "id" : "fb-watchman-2.0.0.tgz",
+      "scopes" : [ "production" ]
+    }, {
+      "sha1" : "166c4ecef3b51737a42436ea8002aeea466ea2c7",
+      "sha256" : "e46ae4e0014cda00d643a37bf5e52f1886b6fe2ddecf63febce385c2373bd2d8",
+      "md5" : "c4479d26574d3e24a0e977fb589a320b",
+      "id" : "browserslist-4.5.4.tgz",
+      "scopes" : [ "production" ]
+    }, {
+      "sha1" : "4fb949441dab182540f1fe035ba60e1947a5e57e",
+      "sha256" : "10cfdc4ec5f60de6a0e70119b08a6512b2565bced4842dbf5bbc35e060566829",
+      "md5" : "ca4b4c944b5fe6aece4ddf517af86abf",
+      "id" : "mixin-object-2.0.1.tgz",
+      "scopes" : [ "production" ]
+    }, {
+      "sha1" : "2022b4b25fbddc21d2f524974a474aafe733908b",
+      "sha256" : "576c64f2098ed44c3d5e48d7a9dc65512700c1d6a969a71a74d474da8e734635",
+      "md5" : "fd75d1bd67b550ece627b2ef307d775d",
+      "id" : "iconv-lite-0.4.24.tgz",
+      "scopes" : [ "production" ]
+    } ]
+  } ]
+}

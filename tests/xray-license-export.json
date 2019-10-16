@@ -1,0 +1,90 @@
+[
+   {
+      "component_id": "is-date-object:1.0.1",
+      "component_name": "is-date-object",
+      "version": "1.0.1",
+      "pkg_type": "npm",
+      "package_id": "npm://is-date-object",
+      "licenses": [
+         {
+            "key": "MIT",
+            "link": "http://www.opensource.org/licenses/MIT",
+            "sources": [
+               {
+                  "source": "JFrog",
+                  "occurrences": 1
+               },
+               {
+                  "source": "Local File",
+                  "occurrences": 2
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "component_id": "compressible:2.0.17",
+      "component_name": "compressible",
+      "version": "2.0.17",
+      "pkg_type": "npm",
+      "package_id": "npm://compressible",
+      "licenses": [
+         {
+            "key": "MIT",
+            "link": "http://www.opensource.org/licenses/MIT",
+            "sources": [
+               {
+                  "source": "JFrog",
+                  "occurrences": 1
+               },
+               {
+                  "source": "Local File",
+                  "occurrences": 2
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "component_id": "mime-db:1.40.0",
+      "component_name": "mime-db",
+      "version": "1.40.0",
+      "pkg_type": "npm",
+      "package_id": "npm://mime-db",
+      "licenses": [
+         {
+            "key": "MIT",
+            "link": "http://www.opensource.org/licenses/MIT",
+            "sources": [
+               {
+                  "source": "JFrog",
+                  "occurrences": 1
+               },
+               {
+                  "source": "Local File",
+                  "occurrences": 2
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "component_id": "@xtuc/long:4.2.2",
+      "component_name": "@xtuc/long",
+      "version": "4.2.2",
+      "pkg_type": "npm",
+      "package_id": "npm://@xtuc/long",
+      "licenses": [
+         {
+            "key": "Apache-2.0",
+            "link": "http://www.opensource.org/licenses/Apache-2.0",
+            "sources": [
+               {
+                  "source": "Local File",
+                  "occurrences": 2
+               }
+            ]
+         }
+      ]
+   }
+]
