@@ -12,10 +12,7 @@ struct GradleDependency {
 #[serde(rename_all = "camelCase")]
 struct GradleModule {
     module_name: String,
-    module_url: String,
     module_version: String,
-    module_license: String,
-    module_license_url: String,
 }
 
 pub fn parse_file(content: &str) -> Vec<(Output)> {

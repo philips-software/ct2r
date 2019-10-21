@@ -6,7 +6,7 @@ This repository holds a tool which can be used to convert outputs of various too
 
 ### Supported tools
 
-- [ ] 1 manual 
+- [x] 1 manual 
 - [ ] 2 blackduck 
 - [x] 3 [Jfrog Xray][xray]
 - [ ] 4 whitesource
@@ -34,14 +34,22 @@ cargo build --release
 An example with the [JFrog Xray][xray] license export results json file.
 
 ```
-./target/release/ct2r Build_js-react-app-443222_License_Export.json
+./target/release/ct2r xray Build_js-react-app-443222_License_Export.json
+```
+
+An example with the gradle license export results json file.
+```
+./target/release/ct2r gradle raw-dependencies.json 
 ```
 
 ### Debug version
 
 ```
-cargo run <filename.json>
+cargo run <tool> <filename.json>
 ```
+
+Tool can be: `xray` or `gradle`.
+
 
 ### Run tests
 ```
