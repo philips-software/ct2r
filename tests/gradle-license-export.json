@@ -1,0 +1,53 @@
+{
+    "dependencies": [
+        {
+            "moduleName": "antlr:antlr",
+            "moduleUrl": "http://www.antlr.org/",
+            "moduleVersion": "2.7.7",
+            "moduleLicense": "BSD License",
+            "moduleLicenseUrl": "http://www.antlr.org/license.html"
+        },
+        {
+            "moduleName": "ch.qos.logback:logback-classic",
+            "moduleUrl": "http://www.qos.ch",
+            "moduleVersion": "1.2.3",
+            "moduleLicense": "GNU Lesser General Public License",
+            "moduleLicenseUrl": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"
+        },
+        {
+            "moduleName": "ch.qos.logback:logback-core",
+            "moduleUrl": "http://www.qos.ch",
+            "moduleVersion": "1.2.3",
+            "moduleLicense": "GNU Lesser General Public License",
+            "moduleLicenseUrl": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"
+        },
+        {
+            "moduleName": "com.esotericsoftware:reflectasm",
+            "moduleUrl": "https://github.com/EsotericSoftware/reflectasm",
+            "moduleVersion": "1.11.9",
+            "moduleLicense": "3-Clause BSD License",
+            "moduleLicenseUrl": "https://opensource.org/licenses/BSD-3-Clause"
+        },
+        {
+            "moduleName": "com.fasterxml.jackson.core:jackson-annotations",
+            "moduleUrl": "http://github.com/FasterXML/jackson",
+            "moduleVersion": "2.9.0",
+            "moduleLicense": "The Apache Software License, Version 2.0",
+            "moduleLicenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        },
+        {
+            "moduleName": "com.fasterxml.jackson.core:jackson-core",
+            "moduleUrl": "https://github.com/FasterXML/jackson-core",
+            "moduleVersion": "2.9.9",
+            "moduleLicense": "The Apache Software License, Version 2.0",
+            "moduleLicenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        },
+        {
+            "moduleName": "com.fasterxml.jackson.core:jackson-databind",
+            "moduleUrl": "http://github.com/FasterXML/jackson",
+            "moduleVersion": "2.9.9",
+            "moduleLicense": "The Apache Software License, Version 2.0",
+            "moduleLicenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+    ]
+}
