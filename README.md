@@ -2,14 +2,17 @@
 
 ## Purpose
 
-This repository holds a tool which can be used to convert outputs of various tools to the reference output.
+We're using several tools to get more insight into the Bill Of Material of applications. All tools and languages have different ways to report these lists with dependencies, licenses and vulnerabilities. In order to compare tools with each other, we need a way to convert the output to a reference output. See reference output section about what is our reference output.
+This repository converts outputs from various tools.
 
 ### Supported tools
 
-- [x] 1 manual 
-- [ ] 2 blackduck 
+- [x] 1 Manual generated JSON from package managers (f.e. gradle)
+- [ ] 2 Blackduck 
 - [x] 3 [Jfrog Xray][xray]
-- [ ] 4 whitesource
+- [ ] 4 Whitesource
+- [ ] 5 FOSSA
+- [ ] 6 Snyk
 
 ## Prerequisite 
 
@@ -42,6 +45,35 @@ An example with the gradle license export results json file.
 ./target/release/ct2r gradle raw-dependencies.json 
 ```
 
+#### Generate json from packagemanager gradle
+
+```
+buildscript {
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'com.github.jk1:gradle-license-report:1.11'
+    }
+}
+
+apply plugin: 'com.github.jk1.dependency-license-report'
+
+import com.github.jk1.license.render.*
+
+licenseReport {
+    renderers = [new JsonReportRenderer()]
+}
+```
+
+Run:
+
+```
+./gradlew generateLicenseReport
+```
+
 ### Debug version
 
 ```
@@ -56,10 +88,10 @@ Tool can be: `xray` or `gradle`.
 cargo test
 ```
 
-## Output
+## Reference Output
 
 The output is saved in a file: `output.json`
-It's format is aligned with the output found in tools like: [npm dependencies extractor][nde]
+It's format is aligned with the reference output found in tools like: [npm dependencies extractor][nde]
 
 ```
 [
@@ -72,6 +104,9 @@ It's format is aligned with the output found in tools like: [npm dependencies ex
 ## Author
 
 Jeroen Knoops
+
+## Future Features 
+- Complement the output of one tool with the other.
 
 [nde]: https://github.com/philips-software/npm-dependencies-extractor
 [xray]: https://jfrog.com/xray/
