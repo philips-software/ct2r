@@ -1,3 +1,6 @@
+[![Build Status](https://github.com/philips-software/ct2r/workflows/build/badge.svg)](https://github.com/philips-software/ct2r/actions/)
+[![Slack](https://philips-software-slackin.now.sh/badge.svg)](https://philips-software-slackin.now.sh)
+
 # ct2r - Convert Tool Output to Reference Output 
 
 ## Purpose
