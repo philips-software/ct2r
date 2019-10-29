@@ -38,6 +38,7 @@ fn parse(tool: &str, filename: &str) -> Result<()> {
     let outputs: Vec<Output> = match tool {
         "xray" => crate::vendors::xray::parse_file(&file_content),
         "gradle" => crate::vendors::gradle::parse_file(&file_content),
+        "blackduck" => crate::vendors::blackduck::parse_file(&file_content),
         _ => Vec::new(),
     };
 
@@ -59,5 +60,10 @@ mod tests {
     #[test]
     fn parse_gradle_test() {
         assert!(parse("gradle", "./tests/gradle-license-export.json").is_ok());
+    }
+    
+    #[test]
+    fn parse_blackduck() {
+        assert!(parse("blackduck", "./tests/blackduck.csv").is_ok());
     }
 }

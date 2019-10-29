@@ -11,7 +11,7 @@ This repository converts outputs from various tools.
 ### Supported tools
 
 - [x] 1 Manual generated JSON from package managers (f.e. gradle)
-- [ ] 2 Blackduck 
+- [x] 2 Blackduck 
 - [x] 3 [Jfrog Xray][xray]
 - [ ] 4 Whitesource
 - [ ] 5 FOSSA
@@ -41,6 +41,11 @@ An example with the [JFrog Xray][xray] license export results json file.
 
 ```
 ./target/release/ct2r xray Build_js-react-app-443222_License_Export.json
+```
+
+An example with the blackduck results csv file.
+```
+./target/release/ct2r blackduck bom_component_custom_fields.csv_
 ```
 
 An example with the gradle license export results json file.
@@ -83,7 +88,7 @@ Run:
 cargo run <tool> <filename.json>
 ```
 
-Tool can be: `xray` or `gradle`.
+Tool can be: `xray`, `blackduck` or `gradle`.
 
 
 ### Run tests
