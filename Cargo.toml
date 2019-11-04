@@ -1,5 +1,5 @@
 [package]
-name = "ct2e"
+name = "ct2r"
 version = "0.1.0"
 authors = ["Jeroen Knoops <jeroen.knoops@philips.com>"]
 edition = "2018"

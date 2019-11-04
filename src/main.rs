@@ -4,11 +4,10 @@ mod engine;
 mod vendors;
 
 fn main() {
-
     let args: Vec<_> = env::args().collect();
     if args.len() != 3 {
         println!("Usage: {} tool json_file", args[0]);
-        println!("");
+        println!();
         println!("  tool:");
         println!("    - xray");
         println!("    - gradle");
@@ -20,4 +19,3 @@ fn main() {
 
     engine::program::start(&tool, &input_path).unwrap();
 }
-

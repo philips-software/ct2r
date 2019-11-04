@@ -1,4 +1,4 @@
-use serde::{ Deserialize, Serialize };
+use serde::{Deserialize, Serialize};
 
 use crate::engine::program::Output;
 
@@ -15,9 +15,9 @@ pub fn parse_file(content: &str) -> Vec<(Output)> {
     let components: Vec<Xray> = serde_json::from_str(&content).unwrap();
     let mut outputs: Vec<Output> = Vec::new();
     for component in components.iter() {
-        let output = Output{
-            name: component.component_name.to_string(), 
-            version: component.version.to_string()
+        let output = Output {
+            name: component.component_name.to_string(),
+            version: component.version.to_string(),
         };
         outputs.push(output);
     }
@@ -81,6 +81,6 @@ mod tests {
 ]
     "#;
         let result: Vec<Output> = parse_file(test_input);
-        assert_eq!(result.len(),2);
+        assert_eq!(result.len(), 2);
     }
 }
