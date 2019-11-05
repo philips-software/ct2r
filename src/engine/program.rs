@@ -25,7 +25,7 @@ fn read_file(filename: &str) -> String {
 }
 
 fn write_file(filename: &str, data: Vec<Output>) {
-    let output_string = format!("{}", serde_json::to_string_pretty(&data).unwrap());
+    let output_string = serde_json::to_string_pretty(&data).unwrap();
     let ofile = File::create(&filename).expect("unable to create file");
     let mut ofile = BufWriter::new(ofile);
     ofile
