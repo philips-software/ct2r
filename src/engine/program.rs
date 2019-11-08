@@ -61,7 +61,7 @@ mod tests {
     fn parse_gradle_test() {
         assert!(parse("gradle", "./tests/gradle-license-export.json").is_ok());
     }
-    
+
     #[test]
     fn parse_blackduck() {
         assert!(parse("blackduck", "./tests/blackduck.csv").is_ok());

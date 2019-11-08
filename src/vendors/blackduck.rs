@@ -15,9 +15,9 @@ pub fn parse_file(content: &str) -> Vec<(Output)> {
 
     for result in rdr.records() {
         let record = result.unwrap();
-        let output = Output{
-            name: record[3].to_string(), 
-            version: record[5].to_string()
+        let output = Output {
+            name: record[3].to_string(),
+            version: record[5].to_string(),
         };
         outputs.push(output);
     }
@@ -36,6 +36,6 @@ Used by,Component id,Version id,Component name,Component version name,Channel ve
 ,0098563f-673a-4027-91d9-94fbc26e7ae3,35e48b66-ecd6-4335-b0a4-ad9cd93481d3,postcss-selector-not,4.0.0,4.0.0,ad705c59-6893-4980-bdbf-0837f1823cc4,MIT License,PERMISSIVE,Transitive Dependency,,DYNAMICALLY_LINKED,true,HIGH,Not In Violation,,22/10/19,npmjs,postcss-selector-not/4.0.0,NOT_REVIEWED,,,Technology_Whitelisting js-react-app-version_1.0.0,KB_COMPONENT,
 "#;
         let result: Vec<Output> = parse_file(test_input);
-        assert_eq!(result.len(),2);
+        assert_eq!(result.len(), 2);
     }
 }
