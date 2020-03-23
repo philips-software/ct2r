@@ -1,10 +1,10 @@
 on: [push]
 
-name: build
+name: build_docker
 
 jobs:
-  build:
-    name: Build 
+  build_docker:
+    name: Build Docker
     runs-on: ubuntu-latest
 
     steps:
