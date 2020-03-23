@@ -57,6 +57,11 @@ mod tests {
 
     #[test]
     fn parse_gradle_test() {
-        assert!(parse("gradle", "./tests/gradle-license-export.json", "./output.json").is_ok());
+        assert!(parse(
+            "gradle",
+            "./tests/gradle-license-export.json",
+            "./output.json"
+        )
+        .is_ok());
     }
 }
