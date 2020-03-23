@@ -6,8 +6,8 @@ use std::fs::File;
 use std::io::Read;
 use std::io::{BufWriter, Write};
 
-pub fn start(tool: &str, filename: &str) -> Result<()> {
-    parse(&tool, &filename).unwrap();
+pub fn start(tool: &str, filename: &str, output: &str) -> Result<()> {
+    parse(&tool, &filename, &output).unwrap();
     Ok(())
 }
 
@@ -33,7 +33,7 @@ fn write_file(filename: &str, data: Vec<Output>) {
         .expect("unable to write");
 }
 
-fn parse(tool: &str, filename: &str) -> Result<()> {
+fn parse(tool: &str, filename: &str, output: &str) -> Result<()> {
     let file_content = read_file(&filename);
     let outputs: Vec<Output> = match tool {
         "xray" => crate::vendors::xray::parse_file(&file_content),
@@ -41,8 +41,7 @@ fn parse(tool: &str, filename: &str) -> Result<()> {
         _ => Vec::new(),
     };
 
-    let output_filename = "output.json";
-    write_file(&output_filename, outputs);
+    write_file(&output, outputs);
 
     Ok(())
 }
@@ -53,11 +52,16 @@ mod tests {
 
     #[test]
     fn parse_xray_test() {
-        assert!(parse("xray", "./tests/xray-license-export.json").is_ok());
+        assert!(parse("xray", "./tests/xray-license-export.json", "./output.json").is_ok());
     }
 
     #[test]
     fn parse_gradle_test() {
-        assert!(parse("gradle", "./tests/gradle-license-export.json").is_ok());
+        assert!(parse(
+            "gradle",
+            "./tests/gradle-license-export.json",
+            "./output.json"
+        )
+        .is_ok());
     }
 }

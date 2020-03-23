@@ -1,0 +1,23 @@
+on: [push]
+
+name: build_docker
+
+jobs:
+  build_docker:
+    name: Build Docker
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build Docker Images
+      uses: philips-software/docker-ci-scripts@update-readme
+      with:
+        dockerfile: . 
+        image-name: ct2r
+        tags: latest 
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: philipssoftware 
+        GITHUB_ORGANIZATION: philips-software
