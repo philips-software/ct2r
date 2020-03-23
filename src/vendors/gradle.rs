@@ -15,7 +15,7 @@ struct GradleModule {
     module_version: String,
 }
 
-pub fn parse_file(content: &str) -> Vec<(Output)> {
+pub fn parse_file(content: &str) -> Vec<Output> {
     let root: GradleDependency = serde_json::from_str(&content).unwrap();
     let mut outputs: Vec<Output> = Vec::new();
     for component in root.dependencies.iter() {

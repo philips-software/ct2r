@@ -40,12 +40,12 @@ cargo build --release
 An example with the [JFrog Xray][xray] license export results json file.
 
 ```
-./target/release/ct2r xray Build_js-react-app-443222_License_Export.json
+./target/release/ct2r xray Build_js-react-app-443222_License_Export.json output.json
 ```
 
 An example with the gradle license export results json file.
 ```
-./target/release/ct2r gradle raw-dependencies.json 
+./target/release/ct2r gradle raw-dependencies.json output.json
 ```
 
 #### Generate json from packagemanager gradle
@@ -80,7 +80,7 @@ Run:
 ### Debug version
 
 ```
-cargo run <tool> <filename.json>
+cargo run <tool> <input.json> <output.json>
 ```
 
 Tool can be: `xray` or `gradle`.
@@ -89,6 +89,13 @@ Tool can be: `xray` or `gradle`.
 ### Run tests
 ```
 cargo test
+```
+
+### Docker version
+
+Run tool from docker image:
+```
+docker  run --rm -v (pwd):/data philipssoftware/ct2r gradle /data/index.json /data/output.json
 ```
 
 ## Reference Output
