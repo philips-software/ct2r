@@ -3,6 +3,8 @@
 
 # ct2r - Convert Tool Output to Reference Output 
 
+> Note: :warning: If you're interested in Software Bill of Materials, you might also look into [Bompare](https://github.com/philips-labs/bompare)
+
 ## Purpose
 
 We're using several tools to get more insight into the Bill Of Material of applications. All tools and languages have different ways to report these lists with dependencies, licenses and vulnerabilities. In order to compare tools with each other, we need a way to convert the output to a reference output. See reference output section about what is our reference output.
